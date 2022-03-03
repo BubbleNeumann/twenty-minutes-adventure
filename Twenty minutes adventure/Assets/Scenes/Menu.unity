@@ -205,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 122174094}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 481898026}
+        m_TargetAssemblyTypeName: ExitButton, Assembly-CSharp
+        m_MethodName: ExitPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &122174094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,6 +446,8 @@ GameObject:
   - component: {fileID: 481898022}
   - component: {fileID: 481898024}
   - component: {fileID: 481898023}
+  - component: {fileID: 481898026}
+  - component: {fileID: 481898025}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -502,6 +516,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 481898021}
   m_CullTransparentMesh: 1
+--- !u!114 &481898025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481898021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66418cee616452b4baee07c5257ba127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &481898026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481898021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aca9af5750e5994ba384dca311ddb42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &985908213
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,7 +576,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -555,7 +593,7 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 232.93327
+  orthographic size: 500
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -826,7 +864,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1759707956}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 481898025}
+        m_TargetAssemblyTypeName: StartButton, Assembly-CSharp
+        m_MethodName: PlayPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1759707956
 MonoBehaviour:
   m_ObjectHideFlags: 0
