@@ -5,8 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class StartButton : MonoBehaviour
 {
+    public void SettingsPressed()
+    {
+        SceneManager.LoadScene("SettingsScene");
+    }
+
     public void PlayPressed()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("StartingLocation");
     }
 }
