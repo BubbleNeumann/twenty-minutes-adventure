@@ -7,5 +7,8 @@
 - (DCh) added character movement
 - (DCh) camera follows character
 
-*March 15th, 2022*
+**March 15th, 2022**
 - (KTs) added settings scene, music and resolution options
+
+**March 16th, 2022**
+- (DCh) added music for main menu
