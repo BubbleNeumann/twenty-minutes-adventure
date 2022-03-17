@@ -12,3 +12,6 @@
 
 **March 16th, 2022**
 - (DCh) added music for main menu
+
+**March 17th, 2022**
+- (DCh) added "walking animation"
