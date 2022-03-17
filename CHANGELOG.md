@@ -14,4 +14,5 @@
 - (DCh) added music for main menu
 
 **March 17th, 2022**
-- (DCh) added "walking animation"
+- (DCh) added walking animation
+- (DCh) changed music file to self-written
