@@ -9,25 +9,23 @@ public class SettingsScript : MonoBehaviour
 {
     public AudioMixer Am;
     Resolution[] rsl;
-    List<string> resolutions;
     public Dropdown dropdown;
     bool isFullScreen = true;
 
-    public void Awake()
+    public void Start()
     {
-        resolutions = new List<string>();
         rsl = Screen.resolutions;
-        foreach (var i in rsl)
-        {
-            resolutions.Add(i.width + "x" + i.height);
-        }
-        dropdown.ClearOptions();
-        dropdown.AddOptions(resolutions);
+    }
+
+    public void ChangeFullScreen()
+    {
+        isFullScreen = !isFullScreen;
+        Screen.fullScreen = isFullScreen;
     }
 
     public void Resolution(int r)
     {
-        Screen.SetResolution(rsl[r].width, rsl[r].height, isFullScreen);
+        //Screen.SetResolution(rsl[r].width, rsl[r].height, isFullScreen);
     }
 
     public void BackToMenuPressed()

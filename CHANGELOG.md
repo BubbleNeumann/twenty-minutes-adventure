@@ -9,3 +9,6 @@
 
 *March 15th, 2022*
 - (KTs) added settings scene, music and resolution options
+
+*March 21st, 2022*
+- (KTs) added in-game settings screen
