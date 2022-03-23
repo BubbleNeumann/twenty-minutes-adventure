@@ -5,15 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class EscSettings : MonoBehaviour
 {
-    public Canvas c;
-    bool menuOpen = false;
-    public void OnGUI()
+    public Canvas menuCanvas;
+
+    public void Update()
     {
-        if (Event.current.Equals(Event.KeyboardEvent(KeyCode.Escape.ToString())))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("ESC");
-            menuOpen = !menuOpen;
-            c.gameObject.SetActive(menuOpen);
+            menuCanvas.enabled = !menuCanvas.enabled;
         }
     }
 
@@ -24,8 +22,6 @@ public class EscSettings : MonoBehaviour
 
     public void SettingsPressed()
     {
-        SceneManager.LoadScene("SettigsScene");
+        SceneManager.LoadScene("SettingsScene");
     }
-
-
 }
