@@ -16,3 +16,6 @@
 **March 17th, 2022**
 - (DCh) added walking animation
 - (DCh) changed music file to self-written
+
+*March 21st, 2022*
+- (KTs) added in-game menu
