@@ -23,5 +23,8 @@
 **March 23rd, 2022**
  - (DCh) in-game menu fix, minor code refactoring
 
-*March 25th, 2022*
+**March 25th, 2022**
 - (KTs) added starting screen, dialog window.
+
+**March 26th, 2022**
+- (DCh) added second location and the crime scene location
