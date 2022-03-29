@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartingLocation.unity
     guid: f3fbdd87fdf29d54ca5c2d61ea37ff2c
+  - enabled: 1
+    path: Assets/Scenes/SecondLocation.unity
+    guid: cc5a9560da35d2a46ab1b4ce7e0a5a64
+  - enabled: 1
+    path: Assets/Scenes/CrimeScene.unity
+    guid: 70309aa96613ab94ab5de34ff509d31c
   m_configObjects: {}

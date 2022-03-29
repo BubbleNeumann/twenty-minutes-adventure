@@ -28,3 +28,6 @@
 
 **March 26th, 2022**
 - (DCh) added second location and the crime scene location
+
+*March 29th, 2022*
+- (KTs) fixed dialog window, added dialog trigger for the first car
