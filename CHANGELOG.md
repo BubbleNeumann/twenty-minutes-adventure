@@ -1,5 +1,5 @@
 
-*March 3rd, 2022*
+**March 3rd, 2022**
 - (DCh) added  background placeholder for the starting loc and the model of the main charachter
 - (KTs) added quit and start buttons
 
@@ -29,5 +29,9 @@
 **March 26th, 2022**
 - (DCh) added second location and the crime scene location
 
-*March 29th, 2022*
+**March 29th, 2022**
 - (KTs) fixed dialog window, added dialog trigger for the first car
+
+**April 1st, 20222**
+- (DCh) fixed " 'character' AnimationEvent has no function name specified! "
+- (DCh) enabled character movement lock when dialog window is active

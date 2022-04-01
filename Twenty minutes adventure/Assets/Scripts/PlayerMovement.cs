@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using static DialogWindow.DialogWindowScript;
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 m_Velocity = Vector3.zero;
     float horizontalMove = 0f;
-
     float walkSpeed = 8f;
 
     void Move(float move)
@@ -28,7 +29,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * walkSpeed;
+        if (!getDialogWindowIsActive())
+        {
+            horizontalMove = Input.GetAxisRaw("Horizontal") * walkSpeed;
+        }
     }
 
 

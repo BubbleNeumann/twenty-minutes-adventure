@@ -3,29 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogWindowScript : MonoBehaviour
+namespace DialogWindow
 {
-    public Canvas dialog;
-    public Text dialogName;
-    public Text dialogText;
-    bool dialogShown = false;
-
-    public void onTriggerClicked()
+    public class DialogWindowScript : MonoBehaviour
     {
-        dialog.gameObject.SetActive(true);
-        dialogShown = true;
-        dialogName.text = "Я:";
-        dialogText.text = "это мой автомобиль. но я хочу прогуляться пешком.";
-    }
+        public Canvas dialog;
+        public Text dialogName;
+        public Text dialogText;
+        private static bool dialogWindowIsActive = false;
 
-    public void Update()
-    {
-        if (dialogShown)
+        public static bool getDialogWindowIsActive()
         {
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+            return dialogWindowIsActive;
+        }
+
+        public void onTriggerClicked()
+        {
+            dialog.gameObject.SetActive(true);
+            dialogWindowIsActive = true;
+            dialogName.text = "пїЅ:";
+            dialogText.text = "пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ.";
+        }
+
+        public void Update()
+        {
+            if (dialogWindowIsActive)
             {
-                dialog.gameObject.SetActive(false);
-                dialogShown = false;
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    dialog.gameObject.SetActive(false);
+                    dialogWindowIsActive = false;
+                }
             }
         }
     }
