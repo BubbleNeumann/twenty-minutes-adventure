@@ -21,8 +21,8 @@ namespace DialogWindow
         {
             dialog.gameObject.SetActive(true);
             dialogWindowIsActive = true;
-            dialogName.text = "�:";
-            dialogText.text = "��� ��� ����������. �� � ���� ����������� ������.";
+            dialogName.text = "Вы:";
+            dialogText.text = "Это мой автомобиль. Но я хочу прогуляться пешком.";
         }
 
         public void Update()

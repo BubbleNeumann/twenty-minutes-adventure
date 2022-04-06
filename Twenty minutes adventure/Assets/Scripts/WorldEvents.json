@@ -1,5 +1,7 @@
 {
+    "callFromPoliceStation": false,
     "investigatedCorpseOnCrimeScene": false,
-    "investigatedCapsOnCrimeScene": false,
-    "interogatedStephanida": false
+    "investigatedCupsOnCrimeScene": false,
+    "interogatedStephanida": false,
+    "partnerGoesHome": false
 }
