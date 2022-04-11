@@ -27,4 +27,9 @@ public class StartingScript : MonoBehaviour
             }
         }
     }
+
+    void OnCollisionEnter2D()
+    {
+        c.gameObject.SetActive(true);
+    }
 }
