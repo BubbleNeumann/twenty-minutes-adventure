@@ -54,7 +54,7 @@ public class DialogManager : MonoBehaviour
         }
         else
         {
-            if (InputManager.GetInstance.GetSubmitPressed())
+            if (false/*InputManager.GetInstance.GetSubmitPressed()*/)
             {
                 ContinueStory();
             }
@@ -65,7 +65,7 @@ public class DialogManager : MonoBehaviour
     {
         if (currentStory.canContinue)
         {
-            dialogText.text = currentStory.Continue;
+            dialogText.text = currentStory.Continue();
         }
         else
         {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static DialogManager;
 
 public class DialogTrigger : MonoBehaviour
 {
@@ -18,10 +19,10 @@ public class DialogTrigger : MonoBehaviour
     {
         if (playerInRange)
         {
-            if (InputManager.GetInstance.GetInteractPressed())
-            {
-                DialogManager.GetInstance().EnterDialogMode(inkJSON);
-            }
+            //if (InputManager.GetInstance.GetInteractPressed())
+            //{
+            //    DialogManager.GetInstance().EnterDialogMode(inkJSON);
+            //}
         }
     }
 

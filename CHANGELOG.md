@@ -35,3 +35,6 @@
 **April 1st, 20222**
 - (DCh) fixed " 'character' AnimationEvent has no function name specified! "
 - (DCh) enabled character movement lock when dialog window is active
+
+**April 12th, 2022**
+- (KTs) added dialog scripts
