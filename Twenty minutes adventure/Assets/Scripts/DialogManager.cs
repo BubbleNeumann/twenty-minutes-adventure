@@ -36,7 +36,7 @@ public class DialogManager : MonoBehaviour
         currentStory = new Story(inkJSON.text);
         dialogIsPlaying = true;
         dialogPanel.SetActive(true);
-        ContinueStory();
+        // ContinueStory();
     }
 
     private void ExitDialogMode()
@@ -54,9 +54,13 @@ public class DialogManager : MonoBehaviour
         }
         else
         {
+<<<<<<< HEAD
             if (false/*InputManager.GetInstance.GetSubmitPressed()*/)
+=======
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+>>>>>>> 3b0fda9 (npc models added)
             {
-                ContinueStory();
+                // ContinueStory();
             }
         }
     }

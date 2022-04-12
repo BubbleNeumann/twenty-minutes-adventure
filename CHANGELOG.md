@@ -32,9 +32,10 @@
 **March 29th, 2022**
 - (KTs) fixed dialog window, added dialog trigger for the first car
 
-**April 1st, 20222**
+**April 1st, 2022**
 - (DCh) fixed " 'character' AnimationEvent has no function name specified! "
 - (DCh) enabled character movement lock when dialog window is active
 
 **April 12th, 2022**
 - (KTs) added dialog scripts
+- (DCh) uploaded new models and fixed color saturation on the crimescene location
