@@ -36,7 +36,7 @@ public class DialogManager : MonoBehaviour
         currentStory = new Story(inkJSON.text);
         dialogIsPlaying = true;
         dialogPanel.SetActive(true);
-        // ContinueStory();
+        ContinueStory();
     }
 
     private void ExitDialogMode()
@@ -56,7 +56,7 @@ public class DialogManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
             {
-                // ContinueStory();
+                ContinueStory();
             }
         }
     }
@@ -65,7 +65,7 @@ public class DialogManager : MonoBehaviour
     {
         if (currentStory.canContinue)
         {
-            dialogText.text = currentStory.Continue;
+            dialogText.text = currentStory.Continue();
         }
         else
         {

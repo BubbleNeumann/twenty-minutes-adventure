@@ -2,27 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static DialogManager;
+using UnityEngine.SceneManagement;
 
 public class DialogTrigger : MonoBehaviour
 {
     private bool playerInRange;
 
     [Header("InkJSON")]
-    [SerializeField] private GameObject inkJSON;
+    [SerializeField] private TextAsset inkJSON;
 
     private void Awake()
     {
         playerInRange = false;
     }
 
-    private void Update()
+    public void StartConversation()
     {
         if (playerInRange)
         {
-            //if (InputManager.GetInstance.GetInteractPressed())
-            //{
-            //    DialogManager.GetInstance().EnterDialogMode(inkJSON);
-            //}
+            DialogManager.GetInstance().EnterDialogMode(inkJSON);
+        }
+    }
+
+    public void ToSecondLocation()
+    {
+        if(playerInRange)
+        {
+            DialogManager.GetInstance().EnterDialogMode(inkJSON);
+            SceneManager.LoadScene("SecondLocation");
         }
     }
 
