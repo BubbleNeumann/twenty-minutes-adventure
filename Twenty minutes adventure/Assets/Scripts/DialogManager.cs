@@ -54,11 +54,7 @@ public class DialogManager : MonoBehaviour
         }
         else
         {
-<<<<<<< HEAD
-            if (false/*InputManager.GetInstance.GetSubmitPressed()*/)
-=======
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
->>>>>>> 3b0fda9 (npc models added)
             {
                 // ContinueStory();
             }
@@ -69,7 +65,7 @@ public class DialogManager : MonoBehaviour
     {
         if (currentStory.canContinue)
         {
-            dialogText.text = currentStory.Continue();
+            dialogText.text = currentStory.Continue;
         }
         else
         {
