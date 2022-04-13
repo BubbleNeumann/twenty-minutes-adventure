@@ -39,3 +39,6 @@
 **April 12th, 2022**
 - (KTs) added dialog scripts
 - (DCh) uploaded new models and fixed color saturation on the crimescene location
+
+**April 13th, 2022**
+- (DCh) added police station location
