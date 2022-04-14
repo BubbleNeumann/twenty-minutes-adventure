@@ -42,3 +42,6 @@
 
 **April 13th, 2022**
 - (DCh) added police station location
+
+**April 14th, 2022**
+- (KTs) added choices system (half-working)

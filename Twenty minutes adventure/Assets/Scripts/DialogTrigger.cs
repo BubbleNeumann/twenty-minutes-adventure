@@ -18,7 +18,7 @@ public class DialogTrigger : MonoBehaviour
 
     public void StartConversation()
     {
-        if (playerInRange)
+        if (playerInRange && !DialogManager.GetInstance().dialogIsPlaying)
         {
             DialogManager.GetInstance().EnterDialogMode(inkJSON);
         }
@@ -26,11 +26,8 @@ public class DialogTrigger : MonoBehaviour
 
     public void ToSecondLocation()
     {
-        if(playerInRange)
-        {
-            DialogManager.GetInstance().EnterDialogMode(inkJSON);
-            SceneManager.LoadScene("SecondLocation");
-        }
+        DialogManager.GetInstance().EnterDialogMode(inkJSON);
+        SceneManager.LoadScene("SecondLocation");
     }
 
     private void OnTriggerEnter2D(Collider2D collider)

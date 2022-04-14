@@ -10,8 +10,12 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private GameObject dialogPanel;
     [SerializeField] private TextMeshProUGUI dialogText;
 
+    [Header("Choices UI")]
+    [SerializeField] private GameObject[] choices;
+    private TextMeshProUGUI[] choicesText;
+
     private Story currentStory;
-    private bool dialogIsPlaying;
+    public bool dialogIsPlaying;
 
     private static DialogManager instance;
 
@@ -19,6 +23,13 @@ public class DialogManager : MonoBehaviour
     {
         dialogIsPlaying = false;
         dialogPanel.SetActive(false);
+
+        choicesText = new TextMeshProUGUI[choices.Length];
+        int index = 0;
+        foreach(GameObject choice in choices)
+        {
+            choicesText[index++] = choice.GetComponentInChildren<TextMeshProUGUI>();
+        }
     }
 
     private void Awake()
@@ -66,10 +77,32 @@ public class DialogManager : MonoBehaviour
         if (currentStory.canContinue)
         {
             dialogText.text = currentStory.Continue();
+            DisplayChoices();
         }
         else
         {
             ExitDialogMode();
         }
+    }
+
+    private void DisplayChoices()
+    {
+        List<Choice> currentChoices = currentStory.currentChoices;
+        int index = 0;
+        foreach (Choice choice in currentChoices)
+        {
+            choices[index].gameObject.SetActive(true);
+            choicesText[index].text = choice.text;
+            index++;
+        }
+        for (int i = index; i < choices.Length; i++)
+        {
+            choices[i].gameObject.SetActive(false);
+        }
+    }
+
+    public void MakeChoice(int choiceIndex) 
+    {
+        currentStory.ChooseChoiceIndex(choiceIndex);
     }
 }
