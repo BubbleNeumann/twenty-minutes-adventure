@@ -24,20 +24,20 @@
  - (DCh) in-game menu fix, minor code refactoring
 
 **March 25th, 2022**
-- (KTs) added starting screen, dialog window.
+- (KTs) added starting screen, dialogue window.
 
 **March 26th, 2022**
 - (DCh) added second location and the crime scene location
 
 **March 29th, 2022**
-- (KTs) fixed dialog window, added dialog trigger for the first car
+- (KTs) fixed dialogue window, added dialogue trigger for the first car
 
 **April 1st, 2022**
 - (DCh) fixed " 'character' AnimationEvent has no function name specified! "
-- (DCh) enabled character movement lock when dialog window is active
+- (DCh) enabled character movement lock when dialogue window is active
 
 **April 12th, 2022**
-- (KTs) added dialog scripts
+- (KTs) added dialogue scripts
 - (DCh) uploaded new models and fixed color saturation on the crimescene location
 
 **April 13th, 2022**
@@ -45,3 +45,4 @@
 
 **April 14th, 2022**
 - (KTs) added choices system (half-working)
+- (Dch) fixed branching in dialogues
