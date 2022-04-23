@@ -9,6 +9,7 @@ public class DialogManager : MonoBehaviour
 {
     [Header("Dialog UI")]
     [SerializeField] private GameObject dialogPanel;
+    [SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private TextMeshProUGUI dialogText;
 
     [Header("Choices UI")]
@@ -78,8 +79,16 @@ public class DialogManager : MonoBehaviour
     {
         if (currentStory.canContinue)
         {
-            dialogText.text = currentStory.Continue();
-            DisplayChoices();
+            nameText.text = currentStory.Continue();
+            if (currentStory.canContinue)
+            {
+                dialogText.text = currentStory.Continue();
+                DisplayChoices();
+            }
+            else
+            {
+                StartCoroutine(ExitDialogMode());
+            }
         }
         else
         {

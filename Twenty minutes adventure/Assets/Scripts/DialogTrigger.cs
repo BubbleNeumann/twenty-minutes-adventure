@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class DialogTrigger : MonoBehaviour
 {
     private bool playerInRange;
+    private bool toSecondLoc;
 
     [Header("InkJSON")]
     [SerializeField] private TextAsset inkJSON;
@@ -14,6 +15,7 @@ public class DialogTrigger : MonoBehaviour
     private void Awake()
     {
         playerInRange = false;
+        toSecondLoc = false;
     }
 
     public void StartConversation()
@@ -24,10 +26,18 @@ public class DialogTrigger : MonoBehaviour
         }
     }
 
+    public void Update()
+    {
+        if (toSecondLoc && !DialogManager.GetInstance().dialogIsPlaying)
+        {
+            SceneManager.LoadScene("SecondLocation");
+        }
+    }
+
     public void ToSecondLocation()
     {
         DialogManager.GetInstance().EnterDialogMode(inkJSON);
-        SceneManager.LoadScene("SecondLocation");
+        toSecondLoc = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
