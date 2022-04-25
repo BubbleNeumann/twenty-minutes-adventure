@@ -14,7 +14,9 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 m_Velocity = Vector3.zero;
     float horizontalMove = 0f;
-    float walkSpeed = 8f;
+    float walkSpeed = 10f;
+
+    private bool facingRight = true;
 
     void Move(float move)
     {
@@ -31,7 +33,16 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!getDialogWindowIsActive())
         {
-            horizontalMove = Input.GetAxisRaw("Horizontal") * walkSpeed;
+            float inputHorisontal = Input.GetAxisRaw("Horizontal");
+            horizontalMove = inputHorisontal * walkSpeed;
+            if (inputHorisontal > 0 && !facingRight)
+            {
+                Flip();
+            }
+            if (inputHorisontal < 0 && facingRight)
+            {
+                Flip();
+            }
         }
     }
 
@@ -39,5 +50,14 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         Move(horizontalMove * Time.fixedDeltaTime);
+    }
+
+
+    void Flip()
+    {
+        Vector3 currentScale = gameObject.transform.localScale;
+        currentScale.x *= -1;
+        gameObject.transform.localScale = currentScale;
+        facingRight = !facingRight;
     }
 }

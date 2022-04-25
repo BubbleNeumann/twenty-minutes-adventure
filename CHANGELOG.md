@@ -46,3 +46,7 @@
 **April 14th, 2022**
 - (KTs) added choices system (half-working)
 - (Dch) fixed branching in dialogues
+
+**April 25th, 2022**
+- (DCh) flip character when moving left
+- (DCh) added trigger on collision

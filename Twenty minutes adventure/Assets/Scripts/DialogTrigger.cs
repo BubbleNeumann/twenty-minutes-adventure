@@ -9,6 +9,8 @@ public class DialogTrigger : MonoBehaviour
     private bool playerInRange;
     private bool toSecondLoc;
 
+    [SerializeField] private bool objectIsTrigger;
+
     [Header("InkJSON")]
     [SerializeField] private TextAsset inkJSON;
 
@@ -42,17 +44,22 @@ public class DialogTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player")
         {
             playerInRange = true;
+            if (objectIsTrigger)
+            {
+                StartConversation();
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collider)
     {
-        if(collider.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player")
         {
             playerInRange = false;
         }
+
     }
 }
