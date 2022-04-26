@@ -1,4 +1,6 @@
 {
+    "scene": "Menu",
+    "partnerIsOnTheScene": false,
     "callFromPoliceStation": false,
     "investigatedCorpseOnCrimeScene": false,
     "investigatedCupsOnCrimeScene": false,

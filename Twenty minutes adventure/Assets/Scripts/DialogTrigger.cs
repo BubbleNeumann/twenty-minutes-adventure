@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static DialogManager;
+using DialogWindow;
 using UnityEngine.SceneManagement;
 
 public class DialogTrigger : MonoBehaviour
@@ -22,7 +22,7 @@ public class DialogTrigger : MonoBehaviour
 
     public void StartConversation()
     {
-        if (playerInRange && !DialogManager.GetInstance().dialogIsPlaying)
+        if (playerInRange && !DialogManager.getDialogWindowIsActive())
         {
             DialogManager.GetInstance().EnterDialogMode(inkJSON);
         }
@@ -30,7 +30,7 @@ public class DialogTrigger : MonoBehaviour
 
     public void Update()
     {
-        if (toSecondLoc && !DialogManager.GetInstance().dialogIsPlaying)
+        if (toSecondLoc && !DialogManager.getDialogWindowIsActive())
         {
             SceneManager.LoadScene("SecondLocation");
         }
