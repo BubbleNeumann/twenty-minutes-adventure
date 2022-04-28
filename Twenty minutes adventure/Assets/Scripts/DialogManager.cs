@@ -20,6 +20,9 @@ namespace DialogWindow
         [SerializeField] private GameObject[] choices;
         private TextMeshProUGUI[] choicesText;
 
+        [Header("Load Globals JSON")]
+        [SerializeField] private TextAsset loadGlobalsJSON;
+
         private Story currentStory;
         public static bool dialogIsPlaying = false;
 
@@ -27,9 +30,8 @@ namespace DialogWindow
         private const string PORTRAIT_TAG = "portrait";
 
         private static DialogManager instance;
+        private DialogueVariables dialogueVariables;
 
-        //[SerializeField] public static Dictionary<string, bool> points = new Dictionary<string, bool>();
-        //public TextAsset json;
 
         public static bool getDialogWindowIsActive()
         {
@@ -38,7 +40,7 @@ namespace DialogWindow
 
         private void Start()
         {
-            //points = JsonUtility.FromJson<Dictionary<string, bool>>(json.text);
+
             dialogIsPlaying = false;
             dialogPanel.SetActive(false);
             choicesText = new TextMeshProUGUI[choices.Length];
@@ -52,6 +54,7 @@ namespace DialogWindow
         private void Awake()
         {
             instance = this;
+            dialogueVariables = new DialogueVariables(loadGlobalsJSON);
         }
 
         public static DialogManager GetInstance()
@@ -63,6 +66,7 @@ namespace DialogWindow
         {
             currentStory = new Story(inkJSON.text);
             dialogIsPlaying = true;
+            dialogueVariables.StartListening(currentStory);
             nameText.text = "???";
             portraitAnimator.Play("default");
             dialogPanel.SetActive(true);
@@ -73,7 +77,7 @@ namespace DialogWindow
         {
             yield return new WaitForSeconds(0.2f);
             dialogIsPlaying = false;
-
+            dialogueVariables.StopListening(currentStory);
             dialogPanel.SetActive(false);
             dialogText.text = "";
         }
@@ -177,6 +181,17 @@ namespace DialogWindow
                         break;
                 }
             }
+        }
+
+        public Ink.Runtime.Object GetVariableState(string variableName)
+        {
+            Ink.Runtime.Object variableValue = null;
+            dialogueVariables.variables.TryGetValue(variableName, out variableValue);
+            if (variableValue == null)
+            {
+                Debug.LogWarning("Ink Variable was found to be null: " + variableName);
+            }
+            return variableValue;
         }
     }
 

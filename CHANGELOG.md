@@ -58,3 +58,4 @@
 - (KTs) fixed dialog window, added portrait placeholder
 - (DCh) animation for default portrait
 - (DCh) additional colliders added
+- (KTs) added dialog logic

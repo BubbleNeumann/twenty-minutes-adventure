@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using DialogWindow;
 using UnityEngine.SceneManagement;
+using Ink.Runtime;
 
 namespace DialogTrigger {
     public class DialogTrigger : MonoBehaviour
     {
         private bool playerInRange;
-        public bool toSecondLoc;
 
         [SerializeField] private bool objectIsTrigger;
 
@@ -18,7 +18,6 @@ namespace DialogTrigger {
         private void Awake()
         {
             playerInRange = false;
-            toSecondLoc = false;
         }
 
         public void StartConversation()
@@ -37,10 +36,15 @@ namespace DialogTrigger {
             //}
         }
 
-        public void ToSecondLocation()
+        public void myCar()
         {
-            DialogManager.GetInstance().EnterDialogMode(inkJSON);
-            toSecondLoc = true;
+            if (((Ink.Runtime.BoolValue)DialogManager.GetInstance().GetVariableState("call_accepted")).value) {
+                SceneManager.LoadScene("SecondLocation");
+            }
+            else
+            {
+                DialogManager.GetInstance().EnterDialogMode(inkJSON);
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D collider)
@@ -50,7 +54,6 @@ namespace DialogTrigger {
                 playerInRange = true;
                 if (objectIsTrigger)
                 {
-                    toSecondLoc = true;
                     StartConversation();
                 }
             }
