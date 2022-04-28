@@ -5,6 +5,7 @@ using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
 
+
 namespace DialogWindow
 {
     public class DialogManager : MonoBehaviour
@@ -13,6 +14,7 @@ namespace DialogWindow
         [SerializeField] private GameObject dialogPanel;
         [SerializeField] private TextMeshProUGUI nameText;
         [SerializeField] private TextMeshProUGUI dialogText;
+        [SerializeField] private Animator portraitAnimator;
 
         [Header("Choices UI")]
         [SerializeField] private GameObject[] choices;
@@ -21,8 +23,13 @@ namespace DialogWindow
         private Story currentStory;
         public static bool dialogIsPlaying = false;
 
+        private const string SPEAKER_TAG = "speaker";
+        private const string PORTRAIT_TAG = "portrait";
+
         private static DialogManager instance;
 
+        //[SerializeField] public static Dictionary<string, bool> points = new Dictionary<string, bool>();
+        //public TextAsset json;
 
         public static bool getDialogWindowIsActive()
         {
@@ -31,6 +38,7 @@ namespace DialogWindow
 
         private void Start()
         {
+            //points = JsonUtility.FromJson<Dictionary<string, bool>>(json.text);
             dialogIsPlaying = false;
             dialogPanel.SetActive(false);
             choicesText = new TextMeshProUGUI[choices.Length];
@@ -55,6 +63,8 @@ namespace DialogWindow
         {
             currentStory = new Story(inkJSON.text);
             dialogIsPlaying = true;
+            nameText.text = "???";
+            portraitAnimator.Play("default");
             dialogPanel.SetActive(true);
             ContinueStory();
         }
@@ -87,16 +97,9 @@ namespace DialogWindow
         {
             if (currentStory.canContinue)
             {
-                nameText.text = currentStory.Continue();
-                if (currentStory.canContinue)
-                {
-                    dialogText.text = currentStory.Continue();
-                    DisplayChoices();
-                }
-                else
-                {
-                    StartCoroutine(ExitDialogMode());
-                }
+                dialogText.text = currentStory.Continue();
+                DisplayChoices();
+                HandleTags(currentStory.currentTags);
             }
             else
             {
@@ -144,6 +147,36 @@ namespace DialogWindow
         {
             currentStory.ChooseChoiceIndex(choiceIndex);
             ContinueStory();
+        }
+
+        private void HandleTags(List<string> currentTags)
+        {
+            // loop through each tag and handle it accordingly
+            foreach (string tag in currentTags)
+            {
+                // parse the tag
+                string[] splitTag = tag.Split(':');
+                if (splitTag.Length != 2)
+                {
+                    Debug.LogError("Tag could not be appropriately parsed: " + tag);
+                }
+                string tagKey = splitTag[0].Trim();
+                string tagValue = splitTag[1].Trim();
+
+                // handle the tag
+                switch (tagKey)
+                {
+                    case SPEAKER_TAG:
+                        nameText.text = tagValue;
+                        break;
+                    case PORTRAIT_TAG:
+                        portraitAnimator.Play(tagValue);
+                        break;
+                    default:
+                        Debug.LogWarning("Tag came in but is not currently being handled: " + tag);
+                        break;
+                }
+            }
         }
     }
 

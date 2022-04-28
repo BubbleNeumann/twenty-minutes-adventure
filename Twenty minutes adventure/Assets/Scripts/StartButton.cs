@@ -14,4 +14,9 @@ public class StartButton : MonoBehaviour
     {
         SceneManager.LoadScene("StartingLocation");
     }
+
+    public void ToCrimeScene()
+    {
+        SceneManager.LoadScene("CrimeScene");
+    }
 }

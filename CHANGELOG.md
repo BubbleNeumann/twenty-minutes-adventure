@@ -53,3 +53,6 @@
 
 **April 26th, 2022*
 - (DCh) fixed movements lock when dialogue is active
+
+**April 28th, 2022**
+- (KTs) fixed dialog window, added portrait placeholder
