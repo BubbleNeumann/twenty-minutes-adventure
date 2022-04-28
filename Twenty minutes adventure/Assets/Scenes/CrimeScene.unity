@@ -318,7 +318,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 6.9273376, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -383,6 +383,7 @@ MonoBehaviour:
   - {fileID: 824211984}
   - {fileID: 1695051302}
   - {fileID: 879472283}
+  loadGlobalsJSON: {fileID: 0}
 --- !u!1 &221230577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1846,7 +1847,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 6.9273376, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2087,7 +2088,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99704eca2abb69c49a3fb9fe97049ea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toSecondLoc: 0
   objectIsTrigger: 0
   inkJSON: {fileID: 4900000, guid: 05f5e6acd8f95914e943838a7570ca8e, type: 3}
 --- !u!61 &1576296732
@@ -2576,7 +2576,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 6.9273376, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

@@ -51,7 +51,7 @@
 - (DCh) flip character when moving left
 - (DCh) added trigger on collision
 
-**April 26th, 2022*
+**April 26th, 2022**
 - (DCh) fixed movements lock when dialogue is active
 
 **April 28th, 2022**
