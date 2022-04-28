@@ -56,3 +56,5 @@
 
 **April 28th, 2022**
 - (KTs) fixed dialog window, added portrait placeholder
+- (DCh) animation for default portrait
+- (DCh) additional colliders added
