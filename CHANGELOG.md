@@ -59,3 +59,7 @@
 - (DCh) animation for default portrait
 - (DCh) additional colliders added
 - (KTs) added dialog logic
+
+**May 10th, 2022**
+- (DCh) added gas station location and the cabinet
+- (DCh) added donut stand sprite for the first loc

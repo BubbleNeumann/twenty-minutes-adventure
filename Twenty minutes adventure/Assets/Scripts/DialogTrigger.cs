@@ -5,7 +5,8 @@ using DialogWindow;
 using UnityEngine.SceneManagement;
 using Ink.Runtime;
 
-namespace DialogTrigger {
+namespace DialogTrigger
+{
     public class DialogTrigger : MonoBehaviour
     {
         private bool playerInRange;
@@ -38,7 +39,8 @@ namespace DialogTrigger {
 
         public void myCar()
         {
-            if (((Ink.Runtime.BoolValue)DialogManager.GetInstance().GetVariableState("call_accepted")).value) {
+            if (((Ink.Runtime.BoolValue)DialogManager.GetInstance().GetVariableState("call_accepted")).value)
+            {
                 SceneManager.LoadScene("SecondLocation");
             }
             else
@@ -65,7 +67,6 @@ namespace DialogTrigger {
             {
                 playerInRange = false;
             }
-
         }
     }
 }

@@ -1,0 +1,35 @@
+Чернышова Дана, 6209
+КР ассемблер
+
+задание 1.
+
+#include<iostream>
+
+int main()
+{
+	int b, c, d, result;
+	std::cin >> b >> c >> d;
+	__asm
+	{
+		mov ebx, b; ebx = b
+		mov ecx, c; ecx = c
+		mov edx, d; edx = d
+		mov eax, ebx; set max = b by default
+		mov esi, ebx; set min = b by default
+		cmp ebx, ecx
+		cmovg esi, ecx; if ebx is greater than ecx, min = ecx
+		cmovl eax, ecx; if ecx is greater than ebx, max = ecx
+		cmp eax, edx; compare current maxand edx
+		cmovl eax, edx; if edx is greater than current max, max = edx
+		cmp esi, edx; compare current min and edx
+		cmovg esi, edx; if edx is less than current min, min = edx;
+		add eax, esi; eax = min + max
+		mov result, eax
+	}
+
+	std::cout << result;
+	return 0;
+}
+
+задние 2.
+
