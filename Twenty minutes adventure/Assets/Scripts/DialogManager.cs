@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 
 namespace DialogWindow
@@ -31,6 +32,7 @@ namespace DialogWindow
 
         private static DialogManager instance;
         private DialogueVariables dialogueVariables;
+        public static string sceneName;
 
 
         public static bool getDialogWindowIsActive()
@@ -54,6 +56,7 @@ namespace DialogWindow
         private void Awake()
         {
             instance = this;
+            sceneName = SceneManager.GetActiveScene().name;
             dialogueVariables = new DialogueVariables(loadGlobalsJSON);
         }
 
@@ -80,6 +83,7 @@ namespace DialogWindow
             dialogueVariables.StopListening(currentStory);
             dialogPanel.SetActive(false);
             dialogText.text = "";
+            dialogueVariables.SaveVariables();
         }
 
         private void Update()

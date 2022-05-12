@@ -63,3 +63,7 @@
 **May 10th, 2022**
 - (DCh) added gas station location and the cabinet
 - (DCh) added donut stand sprite for the first loc
+
+**May 11th, 2022**
+- (KTs) added saving system
+- (KTs) added more dialog logic, new dialog variables

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Ink.Runtime;
+using DialogWindow;
 
 public class DialogueVariables
 {
@@ -40,6 +41,7 @@ public class DialogueVariables
             // rather than using PlayerPrefs.
             PlayerPrefs.SetString(saveVariablesKey, globalVariablesStory.state.ToJson());
         }
+        PlayerPrefs.SetString("current_scene", DialogManager.sceneName);
     }
 
     public void StartListening(Story story)

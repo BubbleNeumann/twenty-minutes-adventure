@@ -31,10 +31,53 @@ namespace DialogTrigger
 
         public void Update()
         {
-            //if (toSecondLoc && !DialogManager.getDialogWindowIsActive())
-            //{
-            //    SceneManager.LoadScene("SecondLocation");
-            //}
+            if (((Ink.Runtime.BoolValue)DialogManager.GetInstance().GetVariableState("donuts_chosen")).value)
+            {
+                SceneManager.LoadScene("Menu");
+            }
+        }
+
+        public void ToCrimeScene()
+        {
+            if (playerInRange && !DialogManager.getDialogWindowIsActive() && !((Ink.Runtime.BoolValue)DialogManager.GetInstance().GetVariableState("started_conversation_Stepanida")).value) {
+                SceneManager.LoadScene("CrimeScene");
+            }
+        }
+
+        public void toSecondLoc()
+        {
+            if (playerInRange && !DialogManager.getDialogWindowIsActive() && ((Ink.Runtime.BoolValue)DialogManager.GetInstance().GetVariableState("started_conversation_Stepanida")).value)
+            {
+                SceneManager.LoadScene("SecondLocation");
+                PlayerPrefs.SetString("current_scene", "SecondLocation");
+            }
+        }
+
+        public void RightDoor()
+        {
+            if (playerInRange && !DialogManager.getDialogWindowIsActive())
+            {
+                SceneManager.LoadScene("cabinet");
+                PlayerPrefs.SetString("current_scene", "cabinet");
+            }
+        }
+
+        public void ToPoliceStation()
+        {
+            if (playerInRange && !DialogManager.getDialogWindowIsActive())
+            {
+                SceneManager.LoadScene("police station");
+                PlayerPrefs.SetString("current_scene", "police station");
+            }
+        }
+
+        public void myCar2()
+        {
+            if (playerInRange && !DialogManager.getDialogWindowIsActive() && ((Ink.Runtime.BoolValue)DialogManager.GetInstance().GetVariableState("started_conversation_Stepanida")).value)
+            {
+                SceneManager.LoadScene("police station");
+                PlayerPrefs.SetString("current_scene", "police station");
+            }
         }
 
         public void myCar()
@@ -42,6 +85,7 @@ namespace DialogTrigger
             if (((Ink.Runtime.BoolValue)DialogManager.GetInstance().GetVariableState("call_accepted")).value)
             {
                 SceneManager.LoadScene("SecondLocation");
+                PlayerPrefs.SetString("current_scene", "SecondLocation");
             }
             else
             {

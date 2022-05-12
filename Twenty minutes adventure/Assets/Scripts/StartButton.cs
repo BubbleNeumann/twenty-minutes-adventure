@@ -12,11 +12,12 @@ public class StartButton : MonoBehaviour
 
     public void PlayPressed()
     {
+        PlayerPrefs.DeleteAll();
         SceneManager.LoadScene("StartingLocation");
     }
 
-    public void ToCrimeScene()
+    public void LoadPressed()
     {
-        SceneManager.LoadScene("CrimeScene");
+        SceneManager.LoadScene(PlayerPrefs.GetString("current_scene", "Menu"));
     }
 }
