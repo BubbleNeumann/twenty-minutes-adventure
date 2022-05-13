@@ -11,7 +11,8 @@ public class EscSettings : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            menuCanvas.enabled = !menuCanvas.enabled;
+            //menuCanvas.enabled = !menuCanvas.enabled;
+            SceneManager.LoadScene("Menu");
         }
     }
 

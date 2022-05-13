@@ -17,11 +17,4 @@ public class Stepanida : MonoBehaviour
             oldwoman.SetActive(false);
         }
     }
-    void Update()
-    {
-        if (((Ink.Runtime.BoolValue)DialogManager.GetInstance().GetVariableState("started_conversation_Stepanida")).value)
-        {
-            oldwoman.SetActive(true);
-        }
-    }
 }
