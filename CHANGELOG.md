@@ -67,3 +67,6 @@
 **May 11th, 2022**
 - (KTs) added saving system
 - (KTs) added more dialog logic, new dialog variables
+
+**May 25th, 2022**
+- (DCh) background style fix for 2nd loc and the chief's cabinet
