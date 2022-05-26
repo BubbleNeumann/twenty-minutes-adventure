@@ -7,3 +7,6 @@ VAR room_investigated = false
 VAR started_conversation_Stepanida = false
 VAR Stepanida_told_everything = false
 VAR Stepanida_refused = false
+VAR chief_visited = false
+VAR criminalist_told = false
+VAR thief_catched = false
