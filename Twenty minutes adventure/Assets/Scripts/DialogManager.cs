@@ -119,8 +119,6 @@ namespace DialogWindow
         {
             List<Choice> currentChoices = currentStory.currentChoices;
 
-
-
             // defensive check to make sure our UI can support the number of choices coming in
             if (currentChoices.Count > choices.Length)
             {
