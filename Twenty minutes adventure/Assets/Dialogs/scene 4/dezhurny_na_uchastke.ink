@@ -6,7 +6,7 @@ INCLUDE ../globals.ink
     ->second
 }
 === main ===
-
+~oficer_greated = true
 Вы зашли в участок и подошли к дежурному#speaker:...
 * [Поговорить с дежурным] 
 -> dialogue

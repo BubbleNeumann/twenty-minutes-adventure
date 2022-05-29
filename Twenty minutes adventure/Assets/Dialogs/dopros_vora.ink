@@ -1,6 +1,13 @@
--> main
+INCLUDE globals.ink
+
+{not thief_was_interrogated:
+    ->main
+  - else:
+    ->second
+}
 ===main===
-По приезде в отдел вы решили сразу допросить подозреваемого. #portrait:default
+~thief_was_interrogated = true
+Вы начинаете допрос подозреваемого. #portrait:default
 
 * ['Спокойно начать'] -> equanimity#speaker:Вы #portrait:maincharacter
 * ['Язвительно спросить'] -> sarcasm
@@ -37,3 +44,7 @@
 ->DONE
 
     -> END
+
+===second===
+'Мне больше нечего вам сказать.'#speaker:Дорей Лейбинг #portrait:maincharacter
+->END

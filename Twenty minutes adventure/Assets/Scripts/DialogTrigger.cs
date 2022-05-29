@@ -31,7 +31,7 @@ namespace DialogTrigger
 
         public void Update()
         {
-            if (((Ink.Runtime.BoolValue)DialogManager.GetInstance().GetVariableState("donuts_chosen")).value)
+            if (((Ink.Runtime.BoolValue)DialogManager.GetInstance().GetVariableState("donuts_chosen")).value || ((Ink.Runtime.BoolValue)DialogManager.GetInstance().GetVariableState("case_closed")).value)
             {
                 SceneManager.LoadScene("Menu");
             }

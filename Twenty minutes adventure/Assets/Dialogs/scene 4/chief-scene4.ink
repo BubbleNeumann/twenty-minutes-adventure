@@ -1,5 +1,6 @@
 INCLUDE ../globals.ink
 
+{thief_catched:->third}
 {not chief_visited:
     ->first
   - else:
@@ -27,4 +28,8 @@ INCLUDE ../globals.ink
 
 ===second===
 'идите занимайтесь делом, офицер.'#speaker:начальник
+->END
+
+===third===
+'Начинайте допрос, офицер.'#speaker:начальник
 ->END
