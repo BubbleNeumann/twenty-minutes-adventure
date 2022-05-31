@@ -1058,6 +1058,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 477939286}
   m_CullTransparentMesh: 1
+--- !u!1 &482810552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 482810554}
+  - component: {fileID: 482810553}
+  m_Layer: 0
+  m_Name: NpcManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &482810553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482810552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4e9348329e846408bd5e8cc4b199df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc_criminalist: {fileID: 1119726572}
+  npc_partner: {fileID: 422951258}
+--- !u!4 &482810554
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482810552}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1821936924}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &599995171
 GameObject:
   m_ObjectHideFlags: 0
@@ -2315,7 +2360,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2104d79ea28f2c94aa9852b8d078ad56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc: {fileID: 1119726572}
 --- !u!114 &1119726579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3534,6 +3578,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1836997498}
+  - {fileID: 482810554}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4061,8 +4106,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2058009841}
-        m_TargetAssemblyTypeName: npc_criminalist, Assembly-CSharp
+      - m_Target: {fileID: 482810553}
+        m_TargetAssemblyTypeName: npc_police, Assembly-CSharp
         m_MethodName: toGasStation
         m_Mode: 1
         m_Arguments:
@@ -4149,7 +4194,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2104d79ea28f2c94aa9852b8d078ad56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc: {fileID: 2058009835}
 --- !u!1 &2088137168
 GameObject:
   m_ObjectHideFlags: 0

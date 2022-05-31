@@ -3,25 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using DialogWindow;
 
-public class parner : MonoBehaviour
+public class npc_second : MonoBehaviour
 {
     public GameObject oldwoman;
+    public GameObject partner_sitting;
+    public GameObject partner_standing;
     void Start()
     {
         if (((Ink.Runtime.BoolValue)DialogManager.GetInstance().GetVariableState("started_conversation_Stepanida")).value)
         {
-            oldwoman.SetActive(false);
+            oldwoman.SetActive(true);
         }
         else
         {
-            oldwoman.SetActive(true);
+            oldwoman.SetActive(false);
         }
-    }
-    void Update()
-    {
         if (((Ink.Runtime.BoolValue)DialogManager.GetInstance().GetVariableState("started_conversation_Stepanida")).value)
         {
-            oldwoman.SetActive(false);
+            partner_sitting.SetActive(false);
+            partner_standing.SetActive(true);
+        }
+        else
+        {
+            partner_sitting.SetActive(true);
+            partner_standing.SetActive(false);
         }
     }
 }

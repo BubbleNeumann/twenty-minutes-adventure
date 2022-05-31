@@ -4,9 +4,10 @@ using UnityEngine;
 using DialogWindow;
 using UnityEngine.SceneManagement;
 
-public class npc_criminalist : MonoBehaviour
+public class npc_police : MonoBehaviour
 {
-    public GameObject npc;
+    public GameObject npc_criminalist;
+    public GameObject npc_partner;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,21 +17,25 @@ public class npc_criminalist : MonoBehaviour
             {
                 if (((Ink.Runtime.BoolValue)DialogManager.GetInstance().GetVariableState("thief_was_interrogated")).value)
                 {
-                    npc.SetActive(true);
+                    npc_partner.SetActive(true);
+                    npc_criminalist.SetActive(true);
                 }
                 else
                 {
-                    npc.SetActive(false);
+                    npc_partner.SetActive(false);
+                    npc_criminalist.SetActive(false);
                 }
             }
             else
             {
-                npc.SetActive(true);
+                npc_partner.SetActive(false);
+                npc_criminalist.SetActive(true);
             }
         }
         else
         {
-            npc.SetActive(false);
+            npc_partner.SetActive(false);
+            npc_criminalist.SetActive(false);
         }
     }
 
