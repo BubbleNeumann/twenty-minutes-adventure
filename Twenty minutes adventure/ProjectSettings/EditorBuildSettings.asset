@@ -29,5 +29,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/gas station.unity
     guid: 0905bfbe5f0d3ad4f9e6749a14172151
+  - enabled: 1
+    path: Assets/Scenes/credits.unity
+    guid: 06c722acf8324e242ba84b888fa80832
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 390861d0a5e3d2042a50310c3d8e14d7, type: 2}

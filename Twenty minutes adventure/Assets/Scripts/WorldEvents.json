@@ -1,9 +1,0 @@
-{
-    "scene": "Menu",
-    "partnerIsOnTheScene": false,
-    "callFromPoliceStation": false,
-    "investigatedCorpseOnCrimeScene": false,
-    "investigatedCupsOnCrimeScene": false,
-    "interogatedStephanida": false,
-    "partnerGoesHome": false
-}
