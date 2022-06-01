@@ -3,7 +3,7 @@ INCLUDE globals.ink
 ->main
 
 ===main===
-~thief_catched = true
+
 'В чем дело? Вы не имеете право меня задерживать!!!'  #speaker:Дорей Лейбинг 
 * [Спокойно] -> composure
 * [Гневно] -> rage
@@ -17,6 +17,7 @@ INCLUDE globals.ink
 'Сейчас мы проедем с вами в отдел, у вас пока есть время.' #speaker:Вы #portrait:default
 
 Вы с задержанным поехали в участок. #portrait:default
+~thief_catched = true
 ->DONE
 
 ===rage===
@@ -27,7 +28,7 @@ INCLUDE globals.ink
 'Ясно, уводите его.' #speaker:Вы #portrait:default
 
 Вы подумали, что Лейбинг просто отнекивается, и поехали в участок. #portrait:default
-
+~thief_catched = true
 ->DONE
 
 ===impoliteness===
@@ -36,6 +37,7 @@ INCLUDE globals.ink
 'Вот ордер на твой арест! Можешь молчать, все равно всё узнаем! ' #speaker:Вы #portrait:default
 
 Вы посадили преступника в машину и поехали в отдел. #portrait:default
+~thief_catched = true
 ->DONE
 
     -> END
