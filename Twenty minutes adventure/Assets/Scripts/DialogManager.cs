@@ -34,12 +34,13 @@ namespace DialogWindow
         private DialogueVariables dialogueVariables;
         public static string sceneName;
 
-
+        // получение статуса диалогового окна
         public static bool getDialogWindowIsActive()
         {
             return dialogIsPlaying;
         }
 
+        // убеждаемся, что при старте сцены диалоговое окно скрыто, и инициализируем переменные для отображения выборов.
         private void Start()
         {
 
@@ -65,6 +66,7 @@ namespace DialogWindow
             return instance;
         }
 
+        // активируем диалоговое окно и создаем объект диалога из прикрепленного текстового файла.
         public void EnterDialogMode(TextAsset inkJSON)
         {
             currentStory = new Story(inkJSON.text);
@@ -76,6 +78,7 @@ namespace DialogWindow
             ContinueStory();
         }
 
+        // убираем диалоговое окно после завершения всех реплик.
         private IEnumerator ExitDialogMode()
         {
             yield return new WaitForSeconds(0.2f);
@@ -101,6 +104,7 @@ namespace DialogWindow
             }
         }
 
+        // вызывает следующую реплику в диалоге.
         private void ContinueStory()
         {
             if (currentStory.canContinue)
@@ -115,11 +119,10 @@ namespace DialogWindow
             }
         }
 
+        // отображение выборов.
         private void DisplayChoices()
         {
             List<Choice> currentChoices = currentStory.currentChoices;
-
-            // defensive check to make sure our UI can support the number of choices coming in
             if (currentChoices.Count > choices.Length)
             {
                 Debug.LogError("More choices were given than the UI can support. Number of choices given: "
@@ -127,13 +130,13 @@ namespace DialogWindow
             }
 
             int index = 0;
-            foreach (Choice choice in currentChoices)
+            foreach (Choice choice in currentChoices) // активируем нужное количество кнопок для выборов.
             {
                 choices[index].gameObject.SetActive(true);
                 choicesText[index++].text = choice.text;
             }
 
-            for (int i = index; i < choices.Length; i++)
+            for (int i = index; i < choices.Length; i++) // прочие оставляем неактивными.
             {
                 choices[i].gameObject.SetActive(false);
             }
@@ -142,7 +145,7 @@ namespace DialogWindow
         }
 
 
-        private IEnumerator SelectFirstChoice()
+        private IEnumerator SelectFirstChoice() 
         {
             EventSystem.current.SetSelectedGameObject(null);
             yield return new WaitForEndOfFrame();
@@ -157,10 +160,9 @@ namespace DialogWindow
 
         private void HandleTags(List<string> currentTags)
         {
-            // loop through each tag and handle it accordingly
             foreach (string tag in currentTags)
             {
-                // parse the tag
+                // парсим теги
                 string[] splitTag = tag.Split(':');
                 if (splitTag.Length != 2)
                 {
@@ -169,7 +171,6 @@ namespace DialogWindow
                 string tagKey = splitTag[0].Trim();
                 string tagValue = splitTag[1].Trim();
 
-                // handle the tag
                 switch (tagKey)
                 {
                     case SPEAKER_TAG:
@@ -185,6 +186,7 @@ namespace DialogWindow
             }
         }
 
+        // получаем переменные из файла
         public Ink.Runtime.Object GetVariableState(string variableName)
         {
             Ink.Runtime.Object variableValue = null;

@@ -4,9 +4,7 @@ using UnityEngine;
 using DialogWindow;
 using UnityEngine.SceneManagement;
 using Ink.Runtime;
-// using static VideoPlayer.VideoPlayer;
-// using System;
-// using System.Windows.Forms;
+
 
 namespace DialogTrigger
 {
@@ -18,7 +16,7 @@ namespace DialogTrigger
         [Header("InkJSON")]
         [SerializeField] private TextAsset inkJSON;
 
-        public void StartConversation()
+        public void StartConversation() // начало диалога.
         {
             if (playerInRange && !DialogManager.getDialogWindowIsActive())
             {
@@ -30,11 +28,10 @@ namespace DialogTrigger
         {
             if (((Ink.Runtime.BoolValue)DialogManager.GetInstance().GetVariableState("donuts_chosen")).value || ((Ink.Runtime.BoolValue)DialogManager.GetInstance().GetVariableState("case_closed")).value)
             {
-                // SceneManager.LoadScene("Menu");
                 SceneManager.LoadScene("credits");
             }
         }
-
+        // переходы на различные локации.
         public void ToCrimeScene()
         {
             if (playerInRange && !DialogManager.getDialogWindowIsActive() && !((Ink.Runtime.BoolValue)DialogManager.GetInstance().GetVariableState("started_conversation_Stepanida")).value) {
@@ -91,6 +88,7 @@ namespace DialogTrigger
             }
         }
 
+        // убеждаемся, что игрок находится близко к интерактивному объекту.
         private void OnTriggerEnter2D(Collider2D collider)
         {
             if (collider.gameObject.tag == "Player")
